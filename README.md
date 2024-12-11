@@ -1,1 +1,2 @@
 # SBA319
+This project has 3 data files and 3 separate route files to utilize best practices. I have a connection error with my MongoDB that I could not figure out how to get it to run as intended, but I tried to meet as many of the requirements as I could otherwise.
