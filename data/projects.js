@@ -5,14 +5,14 @@ const projectsSchema = new mongoose.Schema(
     {
  
       "project_name": "Modern Living Room",
-      "client name": "John Bryant",
+      "client_name": "John Bryant",
       "budget": 5000,
       "status": "In Progress",
       "project_type": "Residential"
     },
     {
       "project_name": "Corporate Office",
-      "client name": "Jennifer Smith",
+      "client_name": "Jennifer Smith",
       "budget": 10000,
       "status": "Planning",
       "project_type": "Commercial"
