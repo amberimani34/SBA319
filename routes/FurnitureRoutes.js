@@ -6,7 +6,7 @@ const router = express.Router();
 // GET
 router.get("/", async (req, res) => {
   try {
-    const birds = await Furniture.find();
+    const furniture = await Furniture.find();
     res.status(200).json(furniture);
   } catch (error) {
     res.status(500).json({ message: error.message });
