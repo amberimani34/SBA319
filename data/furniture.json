@@ -1,0 +1,101 @@
+[
+    {
+      "_id": 1,
+      "name": "Sofa",
+      "type": "Couch",
+      "material": "Leather",
+      "color": "Black",
+      "dimensions": {
+        "length": 6,
+        "width": 3,
+        "height": 3
+      },
+      "price": 1500,
+      "brand": "Ikea"
+    },
+    {
+      "_id": 2,
+      "name": "Coffee Table",
+      "type": "Table",
+      "material": "Wood",
+      "color": "Dark Brown",
+      "dimensions": {
+        "length": 4,
+        "width": 2,
+        "height": 1.5
+      },
+      "price": 350,
+      "brand": "Wayfair"
+    },
+    {
+      "_id": 3,
+      "name": "Armchair",
+      "type": "Chair",
+      "material": "Fabric",
+      "color": "Gray",
+      "dimensions": {
+        "length": 3,
+        "width": 3,
+        "height": 3
+      },
+      "price": 500,
+      "brand": "Ashley Furniture"
+    },
+    {
+      "_id": 4,
+      "name": "Dining Table",
+      "type": "Table",
+      "material": "Wood",
+      "color": "Oak",
+      "dimensions": {
+        "length": 5,
+        "width": 3,
+        "height": 2.5
+      },
+      "price": 1200,
+      "brand": "Crate & Barrel"
+    },
+    {
+      "_id": 5,
+      "name": "Dining Chair",
+      "type": "Chair",
+      "material": "Wood",
+      "color": "White",
+      "dimensions": {
+        "length": 1.5,
+        "width": 1.5,
+        "height": 3
+      },
+      "price": 150,
+      "brand": "West Elm"
+    },
+    {
+      "_id": 6,
+      "name": "Office Desk",
+      "type": "Desk",
+      "material": "Metal and Wood",
+      "color": "Black",
+      "dimensions": {
+        "length": 5,
+        "width": 2.5,
+        "height": 3
+      },
+      "price": 800,
+      "brand": "Herman Miller"
+    },
+    {
+      "_id": 7,
+      "name": "Office Chair",
+      "type": "Chair",
+      "material": "Mesh",
+      "color": "Black",
+      "dimensions": {
+        "length": 2,
+        "width": 2,
+        "height": 4
+      },
+      "price": 250,
+      "brand": "Steelcase"
+    }
+  ]
+  

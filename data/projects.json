@@ -1,0 +1,33 @@
+[
+    {
+      "_id": 1,
+      "project_name": "Modern Living Room",
+      "client": {
+        "name": "John Doe",
+        "contact": "john@example.com"
+      },
+      "budget": 5000,
+      "timeline": {
+        "start": "2024-01-01",
+        "end": "2024-04-01"
+      },
+      "status": "In Progress",
+      "project_type": "Residential"
+    },
+    {
+      "_id": 2,
+      "project_name": "Corporate Office",
+      "client": {
+        "name": "Jane Smith",
+        "contact": "jane@example.com"
+      },
+      "budget": 10000,
+      "timeline": {
+        "start": "2024-02-01",
+        "end": "2024-06-01"
+      },
+      "status": "Planning",
+      "project_type": "Commercial"
+    }
+  ]
+  
