@@ -1,21 +1,59 @@
-const { MongoClient } = require('mongodb');
-const fs = require('fs');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 
-async function importData() {
-  const client = new MongoClient('mongodb://localhost:27017');
-  await client.connect();
-  const db = client.db('interior_design');
+const BirdRoutes = require("./routes/BirdRoutes");
+const FishRoutes = require("./routes/FishRoutes");
+const TreeRoutes = require("./routes/TreeRoutes");
+const app = express();
 
-  // Read the JSON file
-  const projects = JSON.parse(fs.readFileSync('projects.json', 'utf8'));
-  const furniture = JSON.parse(fs.readFileSync('furniture.json', 'utf8'));
-  const rooms = JSON.parse(fs.readFileSync('rooms.json', 'utf8'));
+const PORT = process.env.PORT || 3002;
 
-  // Insert data into the 'projects' collection
-  await db.collection('projects').insertMany(projects);
 
-  console.log('Data Imported');
-  await client.close();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+
+mongoose
+  .connect(process.env.MONGO_URI)
+ 
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+
+app.get("/", (req, res) => res.send("Homebase for API"));
+
+
+app.use("/birds", BirdRoutes);
+app.use("/fish", FishRoutes);
+app.use("/trees", TreeRoutes);
+
+
+
+async function insertSampleData() {
+  try {
+    const Furniture = require("./data/furniture");
+    const Projects = require("./data/projects");
+    const Rooms = require("./data/rooms");
+
+    
+    await Furniture.deleteMany({});
+    await Projects.deleteMany({});
+    await Rooms.deleteMany({});
+
+    await Furniture.create([
+      { name: "Nightstand", material: "Wood", color: "Black & Brown", price: 50 , brand: "Amazon" },
+    ]);
+    await Projects.create([{ name: "Clownfish", waterType: "Saltwater", size: 4 }]);
+    await Rooms.create([{ name: "Oak", height: 50, age: 100 }]);
+
+    console.log("Sample data inserted successfully");
+  } catch (error) {
+    console.error("Error inserting sample data:", error.message);
+  }
 }
 
-importData().catch(console.error);
+mongoose.connection.once("open", insertSampleData);
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
